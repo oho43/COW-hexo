@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://imagen.research.google/editor/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/css2">
+    <title>Imagen Editor &amp; EditBench</title>
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1112.0" data-gr-ext-installed="">
+    <div class="wrapper">
+      <div class="block">
+      </div>
+      <div class="block center">
+        <p class="title">COW</p>
+        <p class="subtitle">Diffusion in Diffusion: Cyclic One-Way Diffusion for Text-Vision-Conditioned Generation</p>
+      </div>
+      <div class="image-block">
+        <img class="image" src="assets/图片2.jpg">
+        <img class="image" src="assets/图片3.jpg">
+        <img class="image" src="assets/图片4.jpg">
+        <img class="image" src="assets/图片5.jpg">
+        <img class="image" src="assets/图片2.jpg">
+      </div>
+      <div class="block">
+        <p class="paragraph">Text-to-Image (T2I) generation with diffusion models allows users to control the semantic content in the synthesized images given text conditions.
+          As a further step toward a more customized image creation application, we introduce a new multi-modality generation setting that synthesizes images based on not only the semantic-level textual input, but also on the pixel-level visual conditions.
+          Existing literature first converts the given visual information to semantic-level representation by connecting it to languages, and then incorporates it into the original denoising process. Seemingly intuitive, such methodological design loses the pixel values during the semantic transition, thus failing to fulfill the task scenario where the preservation of low-level vision is desired (<i>e.g.</i>, ID of a given face image).
+          To this end, we propose <b>Cyclic One-Way Diffusion</b> (COW), a training-free framework for creating customized images with respect to semantic-text and pixel-visual conditioning. Notably, we observe that sub-regions of an image impose mutual interference, just like physical diffusion, to achieve ultimate harmony along the denoising trajectory.
+          Thus we propose to repetitively utilize the given visual condition in a cyclic way, by planting the visual condition as a high-concentration  <b>``seed''</b> at the initialization step of the denoising process, and <b>``diffuse''</b> it into a harmonious picture by controlling a one-way information flow from the visual condition.
+          We repeat the destroy-and-construct process multiple times to gradually but steadily impose the internal diffusion process within the image.
+          Experiments on the challenging one-shot face and text-conditioned image synthesis task demonstrate our superiority in terms of speed, image quality, and conditional fidelity compared to learning-based text-vision conditional methods.</p>
+        <div class="button-container">
+          <a href="https://arxiv.org/abs/2212.06909" target="_blank">
+            <div class="button">
+              Paper
+            </div>
+          </a>
+          <a href="https://storage.cloud.google.com/editbench/editbench.tar.gz">
+            <div class="button">
+              Project
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="block">
+        <p class="section-title">Editing Flow</p>
+        <p class="paragraph">The input to Imagen Editor is a masked image and a text prompt, the output is an image with the unmasked areas <i>untouched</i> and the masked areas <i>filled-in</i>. The edits are faithful to input text prompts, while
+          consistent with input images:</p>
+        <div id="edit-examples">
+          <div class="editing-block"><img class="image" src="assets/text1.jpg"><div class="prompts">
+            <p class="prompt" id="woman-prompt-0">A bouquet of red flowers</p>
+            <p class="prompt" id="woman-prompt-1">Two trees</p>
+            <p class="prompt" id="woman-prompt-2">A sign that says "Imagen Editor"</p>
+           </div>
+           <img class="image" id="woman-target-image" src="assets/text1.jpg">
+          </div>
+          <div class="editing-block">
+            <img class="image" src="assets/duck_original.png">
+            <div class="prompts">
+              <p class="prompt" id="duck-prompt-0">A line drawing of an octopus</p>
+              <p class="prompt" id="duck-prompt-1">A line drawing of an alligator</p>
+              <p class="prompt" id="duck-prompt-2">A line drawing of a dinosaur</p>
+              <p class="prompt" id="duck-prompt-3">A line drawing of a lizard</p>
+              <p class="prompt selected" id="duck-prompt-4">A line drawing of a horse</p>
+              <p class="prompt" id="duck-prompt-5">A line drawing of a person</p>
+              <p class="prompt" id="duck-prompt-6">A line drawing of a person</p>
+            </div>
+            <img class="image" id="duck-target-image" src="https://imagen.research.google/editor/images/duck_4.jpg">
+          </div>
+
+          
+
+        </div>
+      </div>
+
+      <div class="block">
+        <p class="section-title">Fuse Process</p>
+        <p class="paragraph">The input to Imagen Editor is a masked image and a text prompt, the output is an image with the unmasked areas <i>untouched</i> and the masked areas <i>filled-in</i>. The edits are faithful to input text prompts, while
+          consistent with input images:</p>
+        <div class="editing-block">
+          <video autoplay loop controls class="video">
+            <source src="assets/COW_generation_process.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+      <div class="block">
+        <p class="section-title">Preliminary</p>
+        <p class="paragraph">The input to Imagen Editor is a masked image and a text prompt, the output is an image with the unmasked areas <i>untouched</i> and the masked areas <i>filled-in</i>. The edits are faithful to input text prompts, while
+          consistent with input images:</p>
+        <div class="preliminary-block">
+          <img class="image" src="assets/preliminary.png">
+        </div>
+      </div>
+      <div class="block">
+        <p class="section-title">Method</p>
+        <p class="paragraph">The input to Imagen Editor is a masked image and a text prompt, the output is an image with the unmasked areas <i>untouched</i> and the masked areas <i>filled-in</i>. The edits are faithful to input text prompts, while
+          consistent with input images:</p>
+        <div class="preliminary-block">
+          <img class="image" src="assets/method.png">
+        </div>
+      </div>
+
+
+      <div class="block">
+        <p class="section-title">Authors</p>
+        <p class="paragraph">
+            <a href="https://research.google/people/107321/" target="_blank">Su Wang</a><sup>*</sup>,
+            <a href="https://chitwansaharia.github.io/" target="_blank">Chitwan Saharia<sup>*</sup>,
+            </a><a href="https://www.linkedin.com/in/cesleedineen" target="_blank">Ceslee Montgomery<sup>*</sup></a>,
+            <a href="https://jponttuset.cat/" target="_blank">Jordi Pont-Tuset</a>,
+            <a href="https://il.linkedin.com/in/shai-noy-a8363b135" target="_blank">Shai Noy</a>,
+            <a href="https://ch.linkedin.com/in/stefano-pellegrini-86654b63" target="_blank">Stefano Pellegrini</a>,
+            <a href="https://www.cs.utexas.edu/~yasumasa/" target="_blank">Yasumasa Onoe</a>,
+            <a href="https://www.linkedin.com/in/sarah-laszlo-284886114/" target="_blank">Sarah Laszlo</a>,
+            <a href="https://www.cs.toronto.edu/~fleet/" target="_blank">David J. Fleet</a>,
+            <a href="http://www.radusoricut.com/" target="_blank">Radu Soricut</a>,
+            <a href="http://www.jasonbaldridge.com/" target="_blank">Jason Baldridge</a>,
+            <a href="https://norouzi.github.io/" target="_blank">Mohammad Norouzi</a><sup>†</sup>,
+            <a href="https://panderson.me/" target="_blank">Peter Anderson</a><sup>†</sup>,
+            <a href="http://williamchan.ca/" target="_blank">William Chan</a><sup>†</sup>
+        </p>
+        <p class="paragraph">
+          <i><sup>*</sup>Equal contribution. <sup>†</sup>Equal advisory contribution.</i>
+        </p>
+        <p class="section-title" style="margin-top: 60px;">Special Thanks</p>
+        <p class="paragraph">
+          We would like to thank Gunjan Baid, Nicole Brichtova, Sara Mahdavi, Kathy Meier-Hellstern, Zarana Parekh, Anusha Ramesh, Tris Warkentin, Austin Waters, Vijay Vasudevan for their generous help through the course of the project. We thank Irina Blok for creating some of the examples displayed in this website. We give thanks to Igor Karpov, Isabel Kraus-Liang, Raghava Ram Pamidigantam, Mahesh Maddinala, and all the anonymous human annotators for assisting us to coordinate and complete the human evaluation tasks. We are grateful to Huiwen Chang, Austin Tarango, Douglas Eck for reviewing the paper and providing feedback. Thanks to Erica Moreira and Victor Gomes for help with resource coordination. Finally, we would like to give our thanks and appreciation to the authors of DALL-E 2 for their permission for us to use the outputs from their model for research purposes.
+        </p>
+      </div>
+    </div>
+  
+  <script type="text/javascript">
+
+    const shortSwitchTime = 2000;
+    const longSwitchTime = 6000;
+    const imageIds = ["woman"];
+    const images = {
+      "woman":
+         {
+           id: "woman",
+           src: "assets/text1.jpg",
+           currentlySelected: 0,
+           nextSwitch: undefined,
+           prompts: [
+             "A bouquet of red flowers",
+             "Two trees",
+             'A sign that says "Imagen Editor"',
+
+           ],
+           targets: [
+             "assets/text1.jpg",
+             "assets/text2.jpg",
+             "assets/text3.jpg",
+           ]
+         },
+      
+      }
+
+    function switchImage(id, i){
+      document.getElementById(`${id}-target-image`).src = images[id].targets[i];
+      document.getElementById(`${id}-prompt-${images[id].currentlySelected}`).classList.remove('selected');
+      document.getElementById(`${id}-prompt-${i}`).classList.add('selected');
+      images[id].currentlySelected = i;
+    }
+
+    function newEditingBlock(imageId) {
+      const editingBlock = document.createElement('div');
+      editingBlock.classList.add('editing-block');
+
+      const srcImage = document.createElement('img');
+      srcImage.classList.add('image');
+      srcImage.src = images[imageId].src;
+      editingBlock.appendChild(srcImage);
+
+      const prompts = document.createElement('div');
+      prompts.classList.add('prompts');
+
+      for (let i=0; i<images[imageId]["prompts"].length; ++i) {
+        const prompt = document.createElement('p');
+        prompt.innerText = images[imageId]["prompts"][i];
+        prompt.classList.add('prompt');
+        prompt.id = `${imageId}-prompt-${i}`;
+        if (i == images[imageId].currentlySelected) {
+          prompt.classList.add('selected');
+        }
+        prompt.onclick = () => {
+          switchImage(imageId, i);
+          images[imageId].nextSwitch = Date.now() + longSwitchTime;
+        };
+        prompts.appendChild(prompt);
+      }
+
+      editingBlock.appendChild(prompts);
+
+      const targetImage = document.createElement('img');
+      targetImage.classList.add('image');
+      targetImage.id = `${imageId}-target-image`;
+      targetImage.src = images[imageId].targets[0];
+      editingBlock.appendChild(targetImage);
+
+      document.getElementById('edit-examples').appendChild(editingBlock);
+      images[imageId].nextSwitch = Date.now() + shortSwitchTime;
+    }
+
+    function loopThroughPrompts(imageId) {
+      function moveToNextImage(imageId){
+        const position = images[imageId].currentlySelected;
+        const nextPosition = (position == images[imageId].prompts.length - 1) ? 0 : position + 1;
+        switchImage(imageId, nextPosition);
+      }
+
+      if (Date.now() > images[imageId].nextSwitch) {
+        images[imageId].nextSwitch = Date.now() + shortSwitchTime;
+        moveToNextImage(imageId);
+        loopThroughPrompts(imageId);
+      } else {
+        setTimeout(() => {
+          loopThroughPrompts(imageId)
+        }, 50);
+      }
+    }
+
+    for (imageId of imageIds) {
+      newEditingBlock(imageId);
+      loopThroughPrompts(imageId);
+    }
+  </script>
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+  div.grammarly-desktop-integration {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+
+  div.grammarly-desktop-integration:before {
+    content: attr(data-content);
+  }
+</style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
